@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Grocery Shopping Assistant</string>
+
+    <!--LogInActivity-->
+
+        <!--editTexts-->
+        <string name="usernameTextLI">Usuario</string>
+        <string name="passwordTextLI">Contraseña</string>
+
+        <!--Buttons-->
+        <string name="logInLI">Ingresar</string>
+
+    <!--Home-->
+
 </resources>
