@@ -3,12 +3,20 @@
 
     <!--LogInActivity-->
 
-        <!--editTexts-->
-        <string name="usernameTextLI">Usuario</string>
-        <string name="passwordTextLI">Contraseña</string>
+    <!--Edit Texts-->
+    <string name="usernameEditTextLI">Usuario</string>
+    <string name="passwordEditTextLI">Contraseña</string>
 
-        <!--Buttons-->
-        <string name="logInLI">Ingresar</string>
+    <!--Text View-->
+    <string name="accountNegQueTextViewLI">¿Acaso no tiene cuenta? Registrese acá:</string>
+
+    <!--Buttons-->
+    <string name="logInLI">Ingresar</string>
+    <string name="signUpLi">Registrarse</string>>
+
+    <!--Code-->
+    <string name="userNameIsNull">El campo del usuario no puede estar vacio.</string>
+    <string name="passwordIsNull">El campo de la contraseña no puede estar vacio.</string>
 
     <!--Home-->
 

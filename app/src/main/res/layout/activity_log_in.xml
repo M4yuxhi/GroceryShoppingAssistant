@@ -12,28 +12,54 @@
         android:layout_width="244dp"
         android:layout_height="67dp"
         android:ems="10"
+        android:hint="@string/usernameEditTextLI"
         android:inputType="text"
-        android:text="@string/usernameTextLI"
+        android:textColor="@color/scaredPurple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.513" />
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="240dp"
-        android:layout_height="58dp"
+        android:layout_width="244dp"
+        android:layout_height="67dp"
         android:ems="10"
+        android:hint="@string/passwordEditTextLI"
         android:inputType="text"
+        android:textColor="@color/scaredPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654" />
+
+    <Button
+        android:id="@+id/buttonLogIn"
+        android:layout_width="129dp"
+        android:layout_height="48dp"
         android:text="@string/logInLI"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintVertical_bias="0.779" />
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:layout_width="129dp"
+        android:layout_height="48dp"
+        android:text="@string/signUpLi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,14 +72,16 @@
         app:layout_constraintVertical_bias="0.163"
         app:srcCompat="@drawable/groceryassitantapp" />
 
-    <Button
-        android:id="@+id/buttonLogIn"
-        android:layout_width="129dp"
-        android:layout_height="48dp"
-        android:text="@string/logInLI"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accountNegQueTextViewLI"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintVertical_bias="0.86" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
