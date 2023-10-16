@@ -6,8 +6,12 @@ import android.widget.EditText
 import android.widget.Toast
 import android.widget.Button
 import android.content.Intent
+import com.maybomitobar.groceryshoppingassistant.Classes.GroceryShoppingList
+import com.maybomitobar.groceryshoppingassistant.Classes.PantryInventory
 
 import com.maybomitobar.groceryshoppingassistant.Classes.User
+import com.maybomitobar.groceryshoppingassistant.Classes.Product
+import com.maybomitobar.groceryshoppingassistant.Classes.Shop
 
 class LogInActivity : AppCompatActivity() {
 
@@ -30,11 +34,13 @@ class LogInActivity : AppCompatActivity() {
         passwordText = findViewById(R.id.editTextPassword)
 
         usersList.add(
-            User(1, "Scarlett", "31416", "scarlett@example.com", 1, 1),
+            User(1, "Scarlett", "31416", PantryInventory(1, arrayListOf<Product>()),
+                GroceryShoppingList(1, arrayListOf<Product>(), 0, 0, arrayListOf<Shop>())),
         )
 
         usersList.add(
-            User(2, "Mateo", "27183", "mateo@example.com", 2, 2),
+            User(2, "Mateo", "27183", PantryInventory(2, arrayListOf<Product>()),
+                GroceryShoppingList(2, arrayListOf<Product>(), 0, 0, arrayListOf<Shop>())),
         )
 
         val logInIns = findViewById<Button>(R.id.buttonLogIn)
@@ -52,7 +58,7 @@ class LogInActivity : AppCompatActivity() {
                     {
                         userFounded = true
                         val intentHomeActivity = Intent(this, HomeActivity::class.java)
-                        intentHomeActivity.putExtra("usersList", usersList[i])
+                        intentHomeActivity.putExtra("user", usersList[i])
                         startActivityForResult(intentHomeActivity, REQUEST_REGISTER)
                     }
                 }
@@ -61,6 +67,36 @@ class LogInActivity : AppCompatActivity() {
             if(!userFounded)
             {
                 Toast.makeText(this, "No se encontró el usuario.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        val signUpIns = findViewById<Button>(R.id.buttonSignIn)
+
+        signUpIns.setOnClickListener()
+        {
+            val intentRegisterActivity = Intent(this, RegisterActivity::class.java)
+            intentRegisterActivity.putExtra("usersList", usersList)
+            startActivityForResult(intentRegisterActivity, REQUEST_REGISTER)
+        }
+    }
+
+    override fun onResume()
+    {
+        super.onResume()
+        userFounded = false
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
+    {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == REQUEST_REGISTER && resultCode == RESULT_OK)
+        {
+            val newUser = data?.getParcelableExtra<User>("new")
+
+            if(newUser != null)
+            {
+                usersList.add(newUser)
             }
         }
     }

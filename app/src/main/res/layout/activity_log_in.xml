@@ -14,28 +14,13 @@
         android:ems="10"
         android:hint="@string/usernameEditTextLI"
         android:inputType="text"
-        android:textColor="@color/scaredPurple"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.513" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="244dp"
-        android:layout_height="67dp"
-        android:ems="10"
-        android:hint="@string/passwordEditTextLI"
-        android:inputType="text"
-        android:textColor="@color/scaredPurple"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
 
     <Button
         android:id="@+id/buttonLogIn"
@@ -83,5 +68,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.86" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="245dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="@string/passwordEditTextLI"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.661" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

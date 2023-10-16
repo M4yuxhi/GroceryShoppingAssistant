@@ -4,6 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/scaredPurple"
     tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="396dp"
+        android:layout_height="106dp"
+        android:background="#CC6A8B"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/buttonPantryInventory"
+            android:layout_width="101dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/buttonPantryInventory" />
+
+        <Button
+            android:id="@+id/buttonGroceryList"
+            android:layout_width="wrap_content"
+            android:layout_height="106dp"
+            android:layout_weight="1"
+            android:text="@string/buttonGroceryList" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="545dp"
+        android:layout_height="568dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

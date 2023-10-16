@@ -18,6 +18,69 @@
     <string name="userNameIsNull">El campo del usuario no puede estar vacio.</string>
     <string name="passwordIsNull">El campo de la contraseña no puede estar vacio.</string>
 
-    <!--Home-->
+    <!--RegisterActivity-->
+
+    <!--Edit Text-->
+    <string name="usernameEditTextR">Usuario</string>
+    <string name="emailEditTextR">Correo</string>
+    <string name="passwordEditTextR">Contraseña</string>
+    <string name="rePasswordEditTextR">Repita su contraseña</string>
+
+    <!--Text View-->
+    <string name="registerTextViewR">Registro de Usuario</string>
+
+    <!--Button-->
+    <string name="buttonRegisterR">Registrarse</string>
+
+    <!--Code-->
+    <string name="usernameExistR">Este usuario ya existe.</string>
+    <string name="rePasswordIsNull">El campo de repetir contraseña no puede estar vacio.</string>
+    <string name="passwordsArentEqual">"Las contraseñas deben coincidir."</string>
+
+    <!--HomeActivity-->
+
+    <!--Button-->
+    <string name="buttonPantryInventory">Ir a la despensa</string>
+    <string name="buttonGroceryList">Ir a la lista de compra</string>
+
+    <!--GroceryShoppingListActivity-->
+
+    <!--TextView-->
+    <string name="shoppingListName">Lista de compras.</string>
+    <string name="totalPrice">Monto total:</string>
+
+    <!--Button-->
+    <string name="addProductB">Añadir Producto</string>
+
+    <!--AddProductToGSLActivity-->
+
+    <!--EditText-->
+    <string name="nameET_APTGSL">Nombre</string>
+    <string name="priceET_APTGSL">Precio</string>
+    <string name="amountET_APTGSL">Cantidad</string>
+    <string name="descriptionET_APTGSL">Descripción</string>
+    <string name="categoryET_APTGSL">Categoria</string>
+
+    <!--Code-->
+    <string name="nameIsNullAPTGSLA">El campo del nombre no puede estar vacio.</string>
+    <string name="categoryIsNullAPTGSLA">El campo de la categoria no puede estar vacio.</string>
+    <string name="descriptionIsNullAPTGSLA">El campo de la descripción no puede estar vacio.</string>
+    <string name="amountIsNullAPTGSLA">El campo de la cantidad no puede estar vacio.</string>
+    <string name="amountIsUnder1">La cantidad debe ser como mínimo 1.</string>
+    <string name="priceIsNullAPTGSLA">El campo del precio no puede estar vacio.</string>
+    <string name="priceIsUnder1">El precio debe ser como mínimo 1.</string>
+
+    <!--PantryInventoryActivity-->
+    <string name="pantryInventoryName">Despensa</string>
+
+    <!--Adapters-->
+
+    <string name="productId">ID</string>
+    <string name="productPrice">Precio</string>
+    <string name="productAmount">Cantidad</string>
+    <string name="productDescription">Descripción</string>
+    <string name="productCategory">Categoria</string>
+
+
 
 </resources>
