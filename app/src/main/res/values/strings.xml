@@ -42,6 +42,7 @@
     <!--Button-->
     <string name="buttonPantryInventory">Ir a la despensa</string>
     <string name="buttonGroceryList">Ir a la lista de compra</string>
+    <string name="buttonShoppingPlaces">Ir a los lugares de interés</string>
 
     <!--GroceryShoppingListActivity-->
 
@@ -73,14 +74,32 @@
     <!--PantryInventoryActivity-->
     <string name="pantryInventoryName">Despensa</string>
 
+    <!--AddProductToPIActivity-->
+
+    <!--ShoppingPlacesActivity-->
+    <!--TextViews-->
+    <string name="shoppingPlacesName">Lugares de interés</string>
+
+    <!--Buttons-->
+    <string name="buttonAddShoppingPlace">Añadir lugar de interés</string>
+
+    <!--AddShoppingPlaceToSPLActivity-->
+    <!--EditText-->
+    <string name="latitude">Latitud</string>
+    <string name="direction">Dirección</string>
+
+    <!--Code-->
+    <string name="latitudeIsNull">El campo de la latitud no puede estar vacio.</string>
+    <string name="directionIsNull">El campo de la dirección no puede estar vacio.</string>
+
     <!--Adapters-->
 
     <string name="productId">ID</string>
     <string name="productPrice">Precio</string>
     <string name="productAmount">Cantidad</string>
-    <string name="productDescription">Descripción</string>
+    <string name="adapDescription">Descripción</string>
     <string name="productCategory">Categoria</string>
-
-
+    <string name="adapDirection">Dirección</string>
+    <string name="adapLatitude">Latitud</string>
 
 </resources>

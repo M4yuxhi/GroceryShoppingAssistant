@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="scaredPurple">#FFAF7FC8</color>
     <color name="fucsia">#CC6A8B</color>
+    <color name="hintColor">#4E4747</color>
 </resources>

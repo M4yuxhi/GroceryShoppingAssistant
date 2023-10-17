@@ -100,14 +100,17 @@ class GroceryShoppingListActivity : AppCompatActivity()
     }
 
     private fun changeAdapter() {
-        if (listOption) {
+        if (listOption)
+        {
             adapterElements = GroceryShoppingListAdapter(
                 this,
                 R.layout.activity_product_in_gslactivity,
                 user.groceryList!!.productsToBuy!!
             )
             GroceryShoppingListLV.adapter = adapterElements
-        } else if (listOption == false) {
+        }
+        else if (listOption == false)
+        {
             adapter = ArrayAdapter<Product>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -135,7 +138,8 @@ class GroceryShoppingListActivity : AppCompatActivity()
         }
     }
 
-    override fun onResume() {
+    override fun onResume()
+    {
         super.onResume()
         totalPriceTV.text = user.groceryList!!.totalPrice.toString()
     }

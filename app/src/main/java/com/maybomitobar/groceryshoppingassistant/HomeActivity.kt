@@ -19,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
         var buttonPantry: Button = findViewById(R.id.buttonPantryInventory)
         var buttonShoppingList: Button = findViewById(R.id.buttonGroceryList)
+        var buttonShoppingPlaces : Button = findViewById(R.id.buttonShoppingPlaces)
 
         buttonPantry.setOnClickListener()
         {
@@ -32,6 +33,13 @@ class HomeActivity : AppCompatActivity() {
             val intentGroceryShoppingListActivity = Intent(this, GroceryShoppingListActivity::class.java)
             intentGroceryShoppingListActivity.putExtra("user", user)
             startActivity(intentGroceryShoppingListActivity)
+        }
+
+        buttonShoppingPlaces.setOnClickListener()
+        {
+            val intentShoppingPlacesActivity = Intent(this, ShoppingPlacesActivity::class.java)
+            intentShoppingPlacesActivity.putExtra("user", user)
+            startActivity(intentShoppingPlacesActivity)
         }
     }
 }

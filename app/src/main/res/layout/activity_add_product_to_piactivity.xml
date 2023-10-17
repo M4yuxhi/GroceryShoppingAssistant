@@ -5,53 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/scaredPurple"
-    tools:context=".AddProductToGSLActivity">
+    tools:context=".AddProductToPIActivity">
 
     <Button
-        android:id="@+id/buttonAddProductToGSL"
-        android:layout_width="127dp"
-        android:layout_height="58dp"
+        android:id="@+id/buttonAddProductAPTPI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/addProductB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935"
-        tools:text="@string/addProductB" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <EditText
-        android:id="@+id/editTextNameAPTGSL"
-        android:layout_width="257dp"
-        android:layout_height="64dp"
-        android:ems="10"
-        android:hint="@string/nameET_APTGSL"
-        android:inputType="text"
-        android:textColorHint="@color/hintColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
-
-    <EditText
-        android:id="@+id/editTextPriceAPTGSL"
-        android:layout_width="257dp"
-        android:layout_height="64dp"
-        android:ems="10"
-        android:hint="@string/priceET_APTGSL"
-        android:inputType="text"
-        android:textColorHint="@color/hintColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305" />
-
-    <EditText
-        android:id="@+id/editTextAmountAPTGSL"
-        android:layout_width="257dp"
-        android:layout_height="64dp"
+        android:id="@+id/editTextAmountAPTPI"
+        android:layout_width="237dp"
+        android:layout_height="74dp"
         android:ems="10"
         android:hint="@string/amountET_APTGSL"
         android:inputType="text"
@@ -60,26 +31,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <EditText
-        android:id="@+id/editTextDescriptionAPTGSL"
-        android:layout_width="257dp"
-        android:layout_height="64dp"
-        android:ems="10"
-        android:hint="@string/descriptionET_APTGSL"
-        android:inputType="text"
-        android:textColorHint="@color/hintColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
-
-    <EditText
-        android:id="@+id/editTextCategoryAPTGSL"
-        android:layout_width="257dp"
-        android:layout_height="64dp"
+        android:id="@+id/editTextCategoryAPTPI"
+        android:layout_width="237dp"
+        android:layout_height="74dp"
         android:ems="10"
         android:hint="@string/categoryET_APTGSL"
         android:inputType="text"
@@ -88,5 +45,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.357" />
+
+    <EditText
+        android:id="@+id/editTextNameAPTPI"
+        android:layout_width="237dp"
+        android:layout_height="74dp"
+        android:ems="10"
+        android:hint="@string/nameET_APTGSL"
+        android:inputType="text"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.221" />
+
+    <EditText
+        android:id="@+id/editTextDescriptionAPTPI"
+        android:layout_width="237dp"
+        android:layout_height="74dp"
+        android:ems="10"
+        android:hint="@string/descriptionET_APTGSL"
+        android:inputType="text"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645" />
 </androidx.constraintlayout.widget.ConstraintLayout>

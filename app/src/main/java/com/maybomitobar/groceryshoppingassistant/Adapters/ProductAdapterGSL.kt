@@ -31,12 +31,12 @@ class GroceryShoppingListAdapter
         val descriptionTextView = listItemView.findViewById<TextView>(R.id.textViewDescriptionPIGSL)
         val categoryTextView = listItemView.findViewById<TextView>(R.id.textViewCategoryPIGSL)
 
-        idTextView.text = R.string.productId.toString() + " " + product?.id.toString()
+        idTextView.text = context.getString(R.string.productId) + ": " + product?.id.toString()
         nameTextView.text = product?.name
-        priceTextView.text = R.string.productPrice.toString() + " " + product?.price.toString()
-        amountTextView.text = R.string.productAmount.toString() + " " + product?.amount.toString()
-        descriptionTextView.text = R.string.productDescription.toString() + " " + product?.description
-        categoryTextView.text = R.string.productCategory.toString() + " " + product?.category
+        priceTextView.text = context.getString(R.string.productPrice) + ": " + product?.price.toString()
+        amountTextView.text = context.getString(R.string.productAmount) + ": " + product?.amount.toString()
+        descriptionTextView.text = context.getString(R.string.adapDescription) + ": " + product?.description
+        categoryTextView.text = context.getString(R.string.productCategory) + ": " + product?.category
 
         return listItemView
     }
