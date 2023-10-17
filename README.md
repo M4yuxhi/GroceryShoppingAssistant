@@ -3,7 +3,7 @@
 
 
 Link Apk: https://www.mediafire.com/file/roaean4drpch9cq/GroceryShoppingAsistant.apk/file
-Link Video: 
+Link Video: https://www.youtube.com/watch?v=hJN3NAAoGnk
 
 Requerimientos:
 
