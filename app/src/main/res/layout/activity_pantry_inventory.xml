@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fucsia"
     tools:context=".PantryInventoryActivity">
 
     <ListView
         android:id="@+id/listViewInventory"
-        android:layout_width="389dp"
-        android:layout_height="579dp"
+        android:layout_width="397dp"
+        android:layout_height="576dp"
+        android:background="@color/scaredPurple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,22 +19,25 @@
 
     <TextView
         android:id="@+id/textViewPantryInventoryPI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
+        android:layout_width="198dp"
+        android:layout_height="44dp"
+        android:autoSizeTextType="uniform"
+        android:scaleX="1"
+        android:scaleY="1"
         android:text="@string/pantryInventoryName"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/buttonAddProductPI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
         android:text="@string/addProductB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

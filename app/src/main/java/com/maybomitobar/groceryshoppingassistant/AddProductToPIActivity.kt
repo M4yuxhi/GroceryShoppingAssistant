@@ -7,7 +7,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.maybomitobar.groceryshoppingassistant.Classes.PantryInventory
 import com.maybomitobar.groceryshoppingassistant.Classes.Product
@@ -15,6 +14,13 @@ import com.maybomitobar.groceryshoppingassistant.Classes.Product
 class AddProductToPIActivity : AppCompatActivity()
 {
     private lateinit var productsInPI : ArrayList<Product>
+    private lateinit var nameTE : EditText
+    private lateinit var priceTE : EditText
+    private lateinit var categoryTE : EditText
+    private lateinit var amountTE : EditText
+    private lateinit var descriptionTE : EditText
+    private var productExists : Boolean = false
+    private lateinit var productExistentName : String
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -25,12 +31,12 @@ class AddProductToPIActivity : AppCompatActivity()
 
         productsInPI = productInventory?.productsList!!
 
-        val nameTE = findViewById<EditText>(R.id.editTextNameAPTPI)
-        val categoryTE = findViewById<EditText>(R.id.editTextCategoryAPTPI)
-        val amountTE = findViewById<EditText>(R.id.editTextAmountAPTPI)
-        val descriptionTE = findViewById<EditText>(R.id.editTextDescriptionAPTPI)
+        nameTE = findViewById<EditText>(R.id.editTextNameAPTPI)
+        priceTE = findViewById<EditText>(R.id.editTextPriceAPTPI)
+        categoryTE = findViewById<EditText>(R.id.editTextCategoryAPTPI)
+        amountTE = findViewById<EditText>(R.id.editTextAmountAPTPI)
+        descriptionTE = findViewById<EditText>(R.id.editTextDescriptionAPTPI)
 
-        val addProductButton = findViewById<Button>(R.id.buttonAddProductAPTPI)
 
         nameTE.addTextChangedListener(object : TextWatcher
         {
@@ -52,46 +58,20 @@ class AddProductToPIActivity : AppCompatActivity()
                     {
                         categoryTE.setText(productsInPI[i].category.toString())
                         descriptionTE.setText(productsInPI[i].description.toString())
-                        amountTE.setText(productsInPI[i].amount.toString())
+
+                        productExists = true
+                        productExistentName = productsInPI[i].name.toString()
+                        break
                     }
                 }
             }
         }
         )
 
-        addProductButton.setOnClickListener()
-        {
-
-            try
-            {
-
-                val name = nameTE.text.toString()
-                val category = categoryTE.text.toString()
-                val amount = amountTE.text.toString()
-                val description = descriptionTE.text.toString()
-
-                if(CheckProductFields(name, category, amount, description))
-                {
-                    val product = Product(productsInPI.size + 1, name, 0, amount.toInt(), description, category)
-                    val newIntent = Intent()
-                    newIntent.putExtra("new", product)
-                    setResult(RESULT_OK, newIntent)
-                    finish()
-                }
-
-            } catch (e: Exception)
-            {
-                // Manejar excepción o imprimir el error en Logcat
-                e.printStackTrace()
-            }
-
-
-        }
-
-
+        setOnClickListeners()
     }
 
-    private fun CheckProductFields(name : String?, category : String?, amount : String?, description : String?) : Boolean
+    private fun checkProductFields(name : String?, category : String?, amount : String?, description : String?) : Boolean
     {
         var isValid = true
 
@@ -117,5 +97,46 @@ class AddProductToPIActivity : AppCompatActivity()
         }
 
         return isValid
+    }
+
+    private fun setOnClickListeners()
+    {
+        val addProductButton = findViewById<Button>(R.id.buttonAddProductAPTPI)
+
+        addProductButton.setOnClickListener()
+        {
+            if(productExists)
+            {
+                for(i in productsInPI.indices)
+                {
+                    val amount = productsInPI[i].amount
+                    if(amount > 0 && productsInPI[i].name == productExistentName) productsInPI[i].amount ==  amount + amountTE.text.toString().toInt()
+                    //else helperFunctions.makeToast()
+                    finish()
+                }            }
+
+            try
+            {
+                val name = nameTE.text.toString()
+                val category = categoryTE.text.toString()
+                val amount = amountTE.text.toString()
+                val description = descriptionTE.text.toString()
+
+                if(checkProductFields(name, category, amount, description))
+                {
+                    val product = Product(productsInPI.size + 1, name, 0, amount.toInt(), description, category)
+                    val newIntent = Intent()
+                    newIntent.putExtra("new", product)
+                    setResult(RESULT_OK, newIntent)
+                    finish()
+                }
+
+            }
+            catch (e: Exception)
+            {
+                // Manejar excepción o imprimir el error en Logcat
+                e.printStackTrace()
+            }
+        }
     }
 }
