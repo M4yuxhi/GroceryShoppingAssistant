@@ -4,44 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fucsia"
+    android:background="@color/black"
     tools:context=".PantryInventoryActivity">
 
     <ListView
         android:id="@+id/listViewInventory"
-        android:layout_width="397dp"
-        android:layout_height="576dp"
+        android:layout_width="394dp"
+        android:layout_height="739dp"
         android:background="@color/scaredPurple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewPantryInventoryPI"
-        android:layout_width="198dp"
-        android:layout_height="44dp"
-        android:autoSizeTextType="uniform"
-        android:scaleX="1"
-        android:scaleY="1"
-        android:text="@string/pantryInventoryName"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/buttonAddProductPI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:text="@string/addProductB"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarPI"
+        android:layout_width="398dp"
+        android:layout_height="68dp"
+        android:background="@color/fucsia"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listViewInventory" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,10 +3,10 @@ package com.maybomitobar.groceryshoppingassistant.Adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
-import com.maybomitobar.groceryshoppingassistant.Classes.Product
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.maybomitobar.groceryshoppingassistant.Classes.Product
 import com.maybomitobar.groceryshoppingassistant.R
 
 class ProductInventoryAdapter
@@ -28,30 +28,34 @@ class ProductInventoryAdapter
 
             holder = ViewHolder()
             holder.nameTextView = listItemView.findViewById(R.id.textViewNamePI)
-            holder.categoryTextView = listItemView.findViewById(R.id.textViewCategoryPI)
-            holder.descriptionTextView = listItemView.findViewById(R.id.textViewDescriptionPI)
+            holder.priceTextView = listItemView.findViewById(R.id.textViewPricePI)
             holder.amountTextView = listItemView.findViewById(R.id.textViewAmountPI)
+            holder.descriptionTextView = listItemView.findViewById(R.id.textViewDescriptionPI)
+            holder.categoryTextView = listItemView.findViewById(R.id.textViewCategoryPI)
 
             listItemView.tag = holder
-        } else {
+        }
+        else
+        {
             holder = listItemView.tag as ViewHolder
         }
 
         val product = getItem(pos)
 
         holder.nameTextView.text = product?.name
+        holder.priceTextView.text = context.getString(R.string.productPrice) + ": " + product?.price.toString()
+        holder.amountTextView.text = context.getString(R.string.productAmount) + ": " + product?.amount.toString()
         holder.categoryTextView.text = context.getString(R.string.productCategory) + ": " + product?.category
         holder.descriptionTextView.text = context.getString(R.string.adapDescription) + ": " + product?.description
-        holder.amountTextView.text = context.getString(R.string.productAmount) + ": " + product?.amount.toString()
-
         return listItemView!!
     }
 
     private class ViewHolder
     {
         lateinit var nameTextView: TextView
-        lateinit var categoryTextView: TextView
-        lateinit var descriptionTextView: TextView
+        lateinit var priceTextView: TextView
         lateinit var amountTextView: TextView
+        lateinit var descriptionTextView: TextView
+        lateinit var categoryTextView: TextView
     }
 }

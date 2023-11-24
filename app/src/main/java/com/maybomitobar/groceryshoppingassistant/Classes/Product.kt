@@ -2,21 +2,22 @@ package com.maybomitobar.groceryshoppingassistant.Classes
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-data class Product
-(
-
-    val id: Int,
-    val name: String?,
-    val price: Int,
-    val amount: Int,
-    val description: String?,
-    val category: String?
-
-) : Parcelable {
+@Entity
+data class Product(
+    @PrimaryKey val id : Int,
+    @ColumnInfo(name = "name") val name : String?,
+    @ColumnInfo(name = "price") val price : Int,
+    @ColumnInfo(name = "amount") val amount : Int,
+    @ColumnInfo(name = "description") val description : String?,
+    @ColumnInfo(name = "category") val category : String?
+): Parcelable {
 
     constructor(parcel: Parcel) : this
-    (
+        (
         parcel.readInt(),
         parcel.readString(),
         parcel.readInt(),
@@ -25,7 +26,7 @@ data class Product
         parcel.readString()
     )
 
-    override fun writeToParcel(parcel: Parcel, flags: Int)
+    override fun writeToParcel(parcel : Parcel, flags : Int)
     {
         parcel.writeInt(id)
         parcel.writeString(name)

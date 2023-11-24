@@ -13,40 +13,17 @@
         android:theme="@style/Theme.GroceryShoppingAssistant"
         tools:targetApi="31">
         <activity
-            android:name=".AddShoppingPlacesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PlaceToSPActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ShoppingPlacesActivity"
-            android:exported="false" />
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".AddProductToPIActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddProductToGSLActivity"
             android:exported="false" />
         <activity
             android:name=".ProductInPIActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductInGSLActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GroceryShoppingListActivity"
-            android:exported="false" />
-        <activity
             android:name=".PantryInventoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LogInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

@@ -8,12 +8,13 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.maybomitobar.groceryshoppingassistant.Classes.PantryInventory
+import androidx.room.Room
 import com.maybomitobar.groceryshoppingassistant.Classes.Product
+import com.maybomitobar.groceryshoppingassistant.Databases.GSADatabase
 
 class AddProductToPIActivity : AppCompatActivity()
 {
-    private lateinit var productsInPI : ArrayList<Product>
+    private lateinit var products : MutableList<Product>
     private lateinit var nameTE : EditText
     private lateinit var priceTE : EditText
     private lateinit var categoryTE : EditText
@@ -22,14 +23,12 @@ class AddProductToPIActivity : AppCompatActivity()
     private var productExists : Boolean = false
     private lateinit var productExistentName : String
 
+    private lateinit var db : GSADatabase
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product_to_piactivity)
-
-        val productInventory = intent.getParcelableExtra<PantryInventory>("pI")!!
-
-        productsInPI = productInventory?.productsList!!
 
         nameTE = findViewById<EditText>(R.id.editTextNameAPTPI)
         priceTE = findViewById<EditText>(R.id.editTextPriceAPTPI)
@@ -37,6 +36,13 @@ class AddProductToPIActivity : AppCompatActivity()
         amountTE = findViewById<EditText>(R.id.editTextAmountAPTPI)
         descriptionTE = findViewById<EditText>(R.id.editTextDescriptionAPTPI)
 
+        db = Room.databaseBuilder(
+            applicationContext,
+            GSADatabase::class.java, "gsa_database"
+        ).allowMainThreadQueries().build()
+
+        val list = db.productDao().getAll()
+        products = list.toMutableList()
 
         nameTE.addTextChangedListener(object : TextWatcher
         {
@@ -52,15 +58,15 @@ class AddProductToPIActivity : AppCompatActivity()
 
             override fun afterTextChanged(editable: Editable?)
             {
-                for(i in productsInPI.indices)
+                for(i in products.indices)
                 {
-                    if(productsInPI[i].name.toString() == nameTE.editableText.toString())
+                    if(products[i].name.toString() == nameTE.editableText.toString())
                     {
-                        categoryTE.setText(productsInPI[i].category.toString())
-                        descriptionTE.setText(productsInPI[i].description.toString())
+                        categoryTE.setText(products[i].category.toString())
+                        descriptionTE.setText(products[i].description.toString())
 
                         productExists = true
-                        productExistentName = productsInPI[i].name.toString()
+                        productExistentName = products[i].name.toString()
                         break
                     }
                 }
@@ -107,13 +113,14 @@ class AddProductToPIActivity : AppCompatActivity()
         {
             if(productExists)
             {
-                for(i in productsInPI.indices)
+                for(i in products.indices)
                 {
-                    val amount = productsInPI[i].amount
-                    if(amount > 0 && productsInPI[i].name == productExistentName) productsInPI[i].amount ==  amount + amountTE.text.toString().toInt()
+                    val amount = products[i].amount
+                    if(amount > 0 && products[i].name == productExistentName) products[i].amount ==  amount + amountTE.text.toString().toInt()
                     //else helperFunctions.makeToast()
                     finish()
-                }            }
+                }
+            }
 
             try
             {
@@ -124,10 +131,8 @@ class AddProductToPIActivity : AppCompatActivity()
 
                 if(checkProductFields(name, category, amount, description))
                 {
-                    val product = Product(productsInPI.size + 1, name, 0, amount.toInt(), description, category)
-                    val newIntent = Intent()
-                    newIntent.putExtra("new", product)
-                    setResult(RESULT_OK, newIntent)
+                    val product = Product(products.size + 1, name, 0, amount.toInt(), description, category)
+                    db.productDao().insertAll(product)
                     finish()
                 }
 

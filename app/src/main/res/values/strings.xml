@@ -1,60 +1,17 @@
 <resources>
     <string name="app_name">Grocery Shopping Assistant</string>
 
-    <!--LogInActivity-->
-
-    <!--Edit Texts-->
-    <string name="usernameEditTextLI">Usuario</string>
-    <string name="passwordEditTextLI">Contraseña</string>
-
-    <!--Text View-->
-    <string name="accountNegQueTextViewLI">¿Acaso no tiene cuenta? Registrese acá:</string>
-
-    <!--Buttons-->
-    <string name="logInLI">Ingresar</string>
-    <string name="signUpLi">Registrarse</string>>
-
-    <!--Code-->
-    <string name="userNameIsNull">El campo del usuario no puede estar vacio.</string>
-    <string name="passwordIsNull">El campo de la contraseña no puede estar vacio.</string>
-
-    <!--RegisterActivity-->
-
-    <!--Edit Text-->
-    <string name="usernameEditTextR">Usuario</string>
-    <string name="emailEditTextR">Correo</string>
-    <string name="passwordEditTextR">Contraseña</string>
-    <string name="rePasswordEditTextR">Repita su contraseña</string>
-
-    <!--Text View-->
-    <string name="registerTextViewR">Registro de Usuario</string>
-
-    <!--Button-->
-    <string name="buttonRegisterR">Registrarse</string>
-
-    <!--Code-->
-    <string name="usernameExistR">Este usuario ya existe.</string>
-    <string name="rePasswordIsNull">El campo de repetir contraseña no puede estar vacio.</string>
-    <string name="passwordsArentEqual">"Las contraseñas deben coincidir."</string>
-
     <!--HomeActivity-->
-
     <!--Button-->
     <string name="buttonPantryInventory">Ir a la despensa</string>
     <string name="buttonGroceryList">Ir a la lista de compra</string>
     <string name="buttonShoppingPlaces">Ir a los lugares de interés</string>
 
     <!--GroceryShoppingListActivity-->
-
-    <!--TextView-->
-    <string name="shoppingListName">Lista de compras.</string>
-    <string name="totalPrice">Monto total:</string>
-
     <!--Button-->
     <string name="addProductB">Añadir Producto</string>
 
     <!--AddProductToGSLActivity-->
-
     <!--EditText-->
     <string name="nameET_APTGSL">Nombre</string>
     <string name="priceET_APTGSL">Precio</string>
@@ -75,23 +32,6 @@
     <string name="pantryInventoryName">Despensa</string>
 
     <!--AddProductToPIActivity-->
-
-    <!--ShoppingPlacesActivity-->
-    <!--TextViews-->
-    <string name="shoppingPlacesName">Lugares de interés</string>
-
-    <!--Buttons-->
-    <string name="buttonAddShoppingPlace">Añadir lugar de interés</string>
-
-    <!--AddShoppingPlaceToSPLActivity-->
-    <!--EditText-->
-    <string name="latitude">Latitud</string>
-    <string name="direction">Dirección</string>
-
-    <!--Code-->
-    <string name="latitudeIsNull">El campo de la latitud no puede estar vacio.</string>
-    <string name="directionIsNull">El campo de la dirección no puede estar vacio.</string>
-
     <!--Adapters-->
 
     <string name="productId">ID</string>
@@ -101,5 +41,27 @@
     <string name="productCategory">Categoria</string>
     <string name="adapDirection">Dirección</string>
     <string name="adapLatitude">Latitud</string>
+
+    <!-- Main Menu -->
+    <!-- MenuItem -->
+
+    <string name="preferences_item">Ir a las Preferencias</string>
+    <string name="add_product_item">Añadir un Producto</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>
