@@ -25,6 +25,12 @@ data class Product(
         parcel.readString(),
         parcel.readString()
     )
+    {
+        // Verificar si las cadenas son nulas y asignar valores predeterminados si es necesario
+        name ?: ""
+        description ?: ""
+        category ?: ""
+    }
 
     override fun writeToParcel(parcel : Parcel, flags : Int)
     {

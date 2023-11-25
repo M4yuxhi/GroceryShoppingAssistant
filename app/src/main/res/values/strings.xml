@@ -27,6 +27,7 @@
     <string name="amountIsUnder1">La cantidad debe ser como mínimo 1.</string>
     <string name="priceIsNullAPTGSLA">El campo del precio no puede estar vacio.</string>
     <string name="priceIsUnder1">El precio debe ser como mínimo 1.</string>
+    <string name="productExists">¡El producto ya existe!</string>
 
     <!--PantryInventoryActivity-->
     <string name="pantryInventoryName">Despensa</string>
@@ -39,8 +40,6 @@
     <string name="productAmount">Cantidad</string>
     <string name="adapDescription">Descripción</string>
     <string name="productCategory">Categoria</string>
-    <string name="adapDirection">Dirección</string>
-    <string name="adapLatitude">Latitud</string>
 
     <!-- Main Menu -->
     <!-- MenuItem -->

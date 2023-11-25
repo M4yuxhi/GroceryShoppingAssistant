@@ -21,10 +21,9 @@ class ProductInventoryAdapter
         var listItemView = convertView
         val holder: ViewHolder
 
-        if (listItemView == null)
-        {
+        if (listItemView == null) {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            listItemView = inflater.inflate(R.layout.activity_pantry_inventory, parent, false)
+            listItemView = inflater.inflate(R.layout.activity_product_in_piactivity, parent, false)
 
             holder = ViewHolder()
             holder.nameTextView = listItemView.findViewById(R.id.textViewNamePI)

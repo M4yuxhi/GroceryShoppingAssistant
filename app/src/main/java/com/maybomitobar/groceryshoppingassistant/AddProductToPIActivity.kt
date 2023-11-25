@@ -10,7 +10,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.room.Room
 import com.maybomitobar.groceryshoppingassistant.Classes.Product
+import com.maybomitobar.groceryshoppingassistant.Classes.ProductAction
 import com.maybomitobar.groceryshoppingassistant.Databases.GSADatabase
+import com.maybomitobar.groceryshoppingassistant.Helper.HelperFunctions
 
 class AddProductToPIActivity : AppCompatActivity()
 {
@@ -20,8 +22,6 @@ class AddProductToPIActivity : AppCompatActivity()
     private lateinit var categoryTE : EditText
     private lateinit var amountTE : EditText
     private lateinit var descriptionTE : EditText
-    private var productExists : Boolean = false
-    private lateinit var productExistentName : String
 
     private lateinit var db : GSADatabase
 
@@ -30,11 +30,11 @@ class AddProductToPIActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product_to_piactivity)
 
-        nameTE = findViewById<EditText>(R.id.editTextNameAPTPI)
-        priceTE = findViewById<EditText>(R.id.editTextPriceAPTPI)
-        categoryTE = findViewById<EditText>(R.id.editTextCategoryAPTPI)
-        amountTE = findViewById<EditText>(R.id.editTextAmountAPTPI)
-        descriptionTE = findViewById<EditText>(R.id.editTextDescriptionAPTPI)
+        nameTE = findViewById(R.id.editTextNameAPTPI)
+        priceTE = findViewById(R.id.editTextPriceAPTPI)
+        categoryTE = findViewById(R.id.editTextCategoryAPTPI)
+        amountTE = findViewById(R.id.editTextAmountAPTPI)
+        descriptionTE = findViewById(R.id.editTextDescriptionAPTPI)
 
         db = Room.databaseBuilder(
             applicationContext,
@@ -58,15 +58,11 @@ class AddProductToPIActivity : AppCompatActivity()
 
             override fun afterTextChanged(editable: Editable?)
             {
-                for(i in products.indices)
+                for(i in products?.indices!!)
                 {
                     if(products[i].name.toString() == nameTE.editableText.toString())
                     {
-                        categoryTE.setText(products[i].category.toString())
-                        descriptionTE.setText(products[i].description.toString())
-
-                        productExists = true
-                        productExistentName = products[i].name.toString()
+                        HelperFunctions.makeDialog(applicationContext, "Error", applicationContext.getString(R.string.productExists))
                         break
                     }
                 }
@@ -88,7 +84,7 @@ class AddProductToPIActivity : AppCompatActivity()
                 Toast.makeText(this, R.string.nameIsNullAPTGSLA, Toast.LENGTH_SHORT).show()
 
             if(category == "")
-                Toast.makeText(this, R.string.categoryET_APTGSL, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.categoryIsNullAPTGSLA, Toast.LENGTH_SHORT).show()
 
             if(description == "")
                 Toast.makeText(this, R.string.descriptionIsNullAPTGSLA, Toast.LENGTH_SHORT).show()
@@ -111,17 +107,6 @@ class AddProductToPIActivity : AppCompatActivity()
 
         addProductButton.setOnClickListener()
         {
-            if(productExists)
-            {
-                for(i in products.indices)
-                {
-                    val amount = products[i].amount
-                    if(amount > 0 && products[i].name == productExistentName) products[i].amount ==  amount + amountTE.text.toString().toInt()
-                    //else helperFunctions.makeToast()
-                    finish()
-                }
-            }
-
             try
             {
                 val name = nameTE.text.toString()
@@ -135,7 +120,6 @@ class AddProductToPIActivity : AppCompatActivity()
                     db.productDao().insertAll(product)
                     finish()
                 }
-
             }
             catch (e: Exception)
             {

@@ -10,12 +10,13 @@ import android.widget.ListView
 import androidx.room.Room
 import com.maybomitobar.groceryshoppingassistant.Adapters.ProductInventoryAdapter
 import com.maybomitobar.groceryshoppingassistant.Classes.Product
+import com.maybomitobar.groceryshoppingassistant.Classes.ProductAction
 import com.maybomitobar.groceryshoppingassistant.Databases.GSADatabase
+import com.maybomitobar.groceryshoppingassistant.Helper.HelperFunctions
 
 class PantryInventoryActivity : AppCompatActivity()
 {
     private lateinit var adapter : ArrayAdapter<Product>
-    private var listOption : Boolean = true
     private lateinit var InventoryLV : ListView
     private lateinit var adapterElements : ProductInventoryAdapter
     private lateinit var products : MutableList<Product>
@@ -32,16 +33,20 @@ class PantryInventoryActivity : AppCompatActivity()
         adapter = ArrayAdapter<Product>(this, android.R.layout.simple_list_item_1)
         InventoryLV.adapter = adapter
 
-        db = Room.databaseBuilder(
-            applicationContext,
-            GSADatabase::class.java, "gsa_database"
-        ).allowMainThreadQueries().build()
+        try
+        {
+            db = Room.databaseBuilder(
+                applicationContext,
+                GSADatabase::class.java, "gsa_database"
+            ).allowMainThreadQueries().build()
+        }
+        catch (e: Exception)
+        {
+            e.printStackTrace()
+            // Puedes registrar la excepción o mostrar un mensaje de error
+        }
 
-        val list = db.productDao().getAll()
-        products = list.toMutableList()
-
-        changeAdapter()
-        setOnClickListeners()
+        //refreshDatabase()
     }
 
     override fun onCreateOptionsMenu(menu : Menu?) : Boolean
@@ -50,7 +55,8 @@ class PantryInventoryActivity : AppCompatActivity()
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean
+    {
         when(item.itemId)
         {
             R.id.preferencesItem ->
@@ -73,28 +79,33 @@ class PantryInventoryActivity : AppCompatActivity()
     {
         super.onResume()
 
-        val list = db.productDao().getAll()
-        products = list.toMutableList()
-
-        changeAdapter()
+        refreshDatabase()
     }
 
-    private fun changeAdapter()
+    private fun addProduct(product : Product)
     {
-        if(listOption)
+        db.productDao().insertAll(product)
+        refreshDatabase()
+    }
+
+    private fun refreshDatabase()
+    {
+        try
         {
-            adapterElements = ProductInventoryAdapter(this, R.layout.activity_product_in_piactivity, products)
-            InventoryLV.adapter = adapterElements
+            val list = db.productDao().getAll()
+            products = list.toMutableList()
+            setAdapter()
         }
-        else if(!listOption)
+        catch (e : Exception)
         {
-            adapter = ArrayAdapter<Product>(this, android.R.layout.simple_list_item_1)
-            InventoryLV.adapter = adapter
+            HelperFunctions.makeDialog(applicationContext, "Exception", e.toString())
         }
     }
 
-    private fun setOnClickListeners()
+    private fun setAdapter()
     {
-
+        InventoryLV.invalidate()
+        adapterElements = ProductInventoryAdapter(this, R.layout.activity_product_in_piactivity, products)
+        InventoryLV.adapter = adapterElements
     }
 }
