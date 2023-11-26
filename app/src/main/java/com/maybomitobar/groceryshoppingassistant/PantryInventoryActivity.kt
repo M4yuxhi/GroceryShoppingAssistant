@@ -89,6 +89,12 @@ class PantryInventoryActivity : AppCompatActivity()
     {
         when(item.itemId)
         {
+            R.id.searchProductItem ->
+            {
+                val intent = Intent(this, SearchProductActivity::class.java)
+                startActivity(intent)
+                return true
+            }
             R.id.preferencesItem ->
             {
                 val intent = Intent(this, SettingsActivity::class.java)

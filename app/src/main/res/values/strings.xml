@@ -22,6 +22,7 @@
     <string name="priceIsNullAPTGSLA">El campo del precio no puede estar vacio.</string>
     <string name="priceIsUnder1">El precio debe ser como mínimo 1.</string>
     <string name="productExists">¡El producto ya existe!</string>
+    <string name="searchWhenProductsAreEmpty">No hay productos.</string>
 
     <!-- MovementsInfoActivity-->
     <string name="movements_info_name">Registro de Movimientos</string>
@@ -52,11 +53,15 @@
     <string name="add_product_item">Añadir un Producto</string>
     <string name="movement_info_item">Ir a los Registros de Movimiento</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="search_product_item">Buscar Producto</string>
 
     <!-- ProductItem -->
     <string name="see_details_andor_change_amount_item">Ver Detalles y/o Cambiar Cantidad y Precio</string>
     <string name="edit_item">Editar</string>
     <string name="delete_item">Eliminar</string>
+
+    <!-- SearchProduct -->
+    <string name="search_by_item">Buscar Por</string>
 
     <!-- SeeProductDetails -->
     <string name="save_string">Guardar</string>

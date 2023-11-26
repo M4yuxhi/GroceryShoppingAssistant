@@ -6,9 +6,9 @@
     <string name="priceET_APTGSL">Precio</string>
     <string name="amountET_APTGSL">Cantidad</string>
     <string name="descriptionET_APTGSL">Descripción</string>
-    <string name="categoryET_APTGSL">Categoria</string>
+    <string name="categoryET_APTGSL">Categoría</string>
     <string name="nameIsNullAPTGSLA">El campo del nombre no puede estar vacio.</string>
-    <string name="categoryIsNullAPTGSLA">El campo de la categoria no puede estar vacio.</string>
+    <string name="categoryIsNullAPTGSLA">El campo de la categoría no puede estar vacio.</string>
     <string name="descriptionIsNullAPTGSLA">El campo de la descripción no puede estar vacio.</string>
     <string name="amountIsNullAPTGSLA">El campo de la cantidad no puede estar vacio.</string>
     <string name="amountIsUnder1">La cantidad debe ser como mínimo 1.</string>
@@ -22,7 +22,7 @@
     <string name="productPrice">Precio</string>
     <string name="productAmount">Cantidad</string>
     <string name="productDescription">Descripción</string>
-    <string name="productCategory">Categoria</string>
+    <string name="productCategory">Categoría</string>
     <string name="movementInfoAction">Acción</string>
     <string name="movementInfoProductId">Id del Producto</string>
     <string name="addActionAdap">Agregado</string>
@@ -32,9 +32,11 @@
     <string name="add_product_item">Añadir un Producto</string>
     <string name="movement_info_item">Ir a los Registros de Movimiento</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="search_product_item">Buscar Producto</string>
     <string name="see_details_andor_change_amount_item">Ver Detalles y/o Cambiar Cantidad y Precio</string>
     <string name="edit_item">Editar</string>
     <string name="delete_item">Eliminar</string>
+    <string name="search_by_item">Buscar Por</string>
     <string name="save_string">Guardar</string>
     <string name="deleteDTitle">Eliminar Producto</string>
     <string name="deleteDMessage">¿Desea eliminar este producto?</string>
@@ -48,4 +50,5 @@
     <string name="order_by_amount">Por Cantidad</string>
     <string name="order_by_description">Por Descripción</string>
     <string name="order_by_category">Por Categoría</string>
+    <string name="searchWhenProductsAreEmpty">No hay productos.</string>
 </resources>

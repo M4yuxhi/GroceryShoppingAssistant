@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:checkableBehavior="none"
+        android:visible="true">
+        <item
+            android:id="@+id/searchById"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/productId" />
+        <item
+            android:id="@+id/searchByNameItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/productName" />
+        <item
+            android:id="@+id/searchByPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/productPrice" />
+        <item
+            android:id="@+id/searchByAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/productAmount" />
+        <item
+            android:id="@+id/searchByDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/productDescription" />
+        <item
+            android:id="@+id/searchByCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/productCategory" />
+    </group>
+</menu>

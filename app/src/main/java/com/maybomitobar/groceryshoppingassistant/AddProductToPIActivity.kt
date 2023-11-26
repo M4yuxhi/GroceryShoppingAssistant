@@ -22,7 +22,7 @@ class AddProductToPIActivity : AppCompatActivity()
     private lateinit var categoryTE : EditText
     private lateinit var amountTE : EditText
     private lateinit var descriptionTE : EditText
-
+    private var productExists : Boolean = false
     private lateinit var db : GSADatabase
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -69,11 +69,14 @@ class AddProductToPIActivity : AppCompatActivity()
             {
                 if (::products.isInitialized)
                 {
+                    productExists = false
+
                     for(i in products?.indices!!)
                     {
                         if(products[i].name.toString() == nameTE.editableText.toString())
                         {
                             HelperFunctions.makeDialog(this@AddProductToPIActivity, "Error", applicationContext.getString(R.string.productExists))
+                            productExists = true
                             break
                         }
                     }
@@ -127,7 +130,7 @@ class AddProductToPIActivity : AppCompatActivity()
                 val description = descriptionTE.text.toString()
                 val category = categoryTE.text.toString()
 
-                if(checkProductFields(name, category, amount, description))
+                if(checkProductFields(name, category, amount, description) && !productExists)
                 {
                     var product : Product
 

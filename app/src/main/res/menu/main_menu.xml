@@ -7,6 +7,11 @@
         android:id="@+id/preferencesItem"
         android:title="@string/preferences_item" />
     <item
+        android:id="@+id/searchProductItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/search_product_item" />
+    <item
         android:id="@+id/addProductItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

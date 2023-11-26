@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fucsia"
+    tools:context=".SearchProductActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="412dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Name" />
+
+            <Button
+                android:id="@+id/buttonSearchSPA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/scaredPurple"
+                android:backgroundTint="@color/scaredPurple"
+                android:drawableTint="@color/scaredPurple"
+                android:foregroundTint="@color/scaredPurple"
+                android:shadowColor="@color/scaredPurple"
+                android:textColor="@color/scaredPurple"
+                android:textColorHighlight="@color/scaredPurple"
+                android:textColorHint="@color/scaredPurple"
+                android:textColorLink="@color/scaredPurple"
+                app:icon="@drawable/magnifying_glass"
+                app:iconTint="@color/scaredPurple"
+                app:rippleColor="@color/scaredPurple"
+                app:strokeColor="@color/scaredPurple" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarASP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/fucsia"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listViewProductSearch"
+            android:layout_width="match_parent"
+            android:layout_height="716dp"
+            android:background="@color/scaredPurple" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

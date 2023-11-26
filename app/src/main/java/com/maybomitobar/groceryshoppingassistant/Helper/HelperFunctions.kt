@@ -36,6 +36,32 @@ class HelperFunctions
             context : Context?,
             title : String,
             message : String,
+            action : () -> Unit
+        )
+        {
+            if (context == null) return
+
+            val builder = createDialogBuilder(context, title, message)
+
+            builder.setTitle(title)
+            builder.setMessage(message)
+
+            builder.setPositiveButton("Ok")
+            {
+                dialog, which ->
+                action.invoke()
+                dialog.dismiss()
+            }
+
+            val alertDialog = builder.create()
+            alertDialog.show()
+        }
+
+        fun makeDialog
+        (
+            context : Context?,
+            title : String,
+            message : String,
             positiveLabel : String,
             negativeLabel : String,
             positiveAction: () -> Unit,

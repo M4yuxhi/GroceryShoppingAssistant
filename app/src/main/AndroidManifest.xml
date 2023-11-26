@@ -13,6 +13,9 @@
         android:theme="@style/Theme.GroceryShoppingAssistant"
         tools:targetApi="31">
         <activity
+            android:name=".SearchProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".MovementInfoInMIActivity"
             android:exported="false" />
         <activity
