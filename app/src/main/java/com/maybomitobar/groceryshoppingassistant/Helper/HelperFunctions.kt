@@ -7,9 +7,17 @@ class HelperFunctions
 {
     companion object
     {
-        fun makeDialog(context : Context, title : String, message : String)
+
+        fun makeDialog
+        (
+            context : Context?,
+            title : String,
+            message : String
+        )
         {
-            val builder = AlertDialog.Builder(context)
+            if (context == null) return
+
+            val builder = createDialogBuilder(context, title, message)
 
             builder.setTitle(title)
             builder.setMessage(message)
@@ -18,6 +26,55 @@ class HelperFunctions
             {
                 dialog, which -> dialog.dismiss()
             }
+
+            val alertDialog = builder.create()
+            alertDialog.show()
+        }
+
+        fun makeDialog
+        (
+            context : Context?,
+            title : String,
+            message : String,
+            positiveLabel : String,
+            negativeLabel : String,
+            positiveAction: () -> Unit,
+            negativeAction: () -> Unit
+        )
+        {
+            if (context == null) return
+
+            val builder = createDialogBuilder(context, title, message)
+
+            builder.setTitle(title)
+            builder.setMessage(message)
+
+            builder.setPositiveButton(positiveLabel)
+            {
+                dialog, which ->
+                positiveAction.invoke()
+                dialog.dismiss()
+            }
+            builder.setNegativeButton(negativeLabel)
+            {
+                dialog, which ->
+                negativeAction.invoke()
+                dialog.dismiss()
+            }
+
+            val alertDialog = builder.create()
+            alertDialog.show()
+        }
+
+        private fun createDialogBuilder
+        (
+            context: Context,
+            title: String,
+            message: String
+        ): AlertDialog.Builder {
+            return AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
         }
     }
 }

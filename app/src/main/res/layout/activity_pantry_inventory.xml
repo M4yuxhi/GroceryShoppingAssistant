@@ -4,32 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/scaredPurple"
     tools:context=".PantryInventoryActivity">
 
-    <ListView
-        android:id="@+id/listViewInventory"
-        android:layout_width="394dp"
-        android:layout_height="739dp"
-        android:background="@color/scaredPurple"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarPI"
-        android:layout_width="398dp"
-        android:layout_height="68dp"
-        android:background="@color/fucsia"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarPI"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@color/fucsia"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <ListView
+            android:id="@+id/listViewInventory"
+            android:layout_width="392dp"
+            android:layout_height="wrap_content"
+            android:background="@color/scaredPurple" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

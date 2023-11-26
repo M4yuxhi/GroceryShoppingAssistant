@@ -11,4 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="@string/add_product_item" />
+    <item
+        android:id="@+id/movementInfoItem"
+        android:title="@string/movement_info_item" />
 </menu>

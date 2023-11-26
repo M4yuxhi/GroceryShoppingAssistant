@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductInPIActivity">
+    tools:context=".MovementInfoInMIActivity">
 
     <LinearLayout
-        android:layout_width="377dp"
-        android:layout_height="122dp"
+        android:layout_width="362dp"
+        android:layout_height="69dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,46 +17,25 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/textViewIDPI"
+            android:id="@+id/textViewIDMI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/textViewNamePI"
+            android:id="@+id/textViewActionMI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/textViewPricePI"
+            android:id="@+id/textViewProductIDMI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textViewAmountPI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textViewDescriptionPI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textViewCategoryPI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/black" />
-
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

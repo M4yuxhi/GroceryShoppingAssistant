@@ -29,6 +29,9 @@
     <string name="priceIsUnder1">El precio debe ser como mínimo 1.</string>
     <string name="productExists">¡El producto ya existe!</string>
 
+    <!-- MovementsInfoActivity-->
+    <string name="movements_info_name">Registro de Movimientos</string>
+
     <!--PantryInventoryActivity-->
     <string name="pantryInventoryName">Despensa</string>
 
@@ -36,31 +39,51 @@
     <!--Adapters-->
 
     <string name="productId">ID</string>
+    <string name="productName">Nombre</string>
     <string name="productPrice">Precio</string>
     <string name="productAmount">Cantidad</string>
-    <string name="adapDescription">Descripción</string>
+    <string name="productDescription">Descripción</string>
     <string name="productCategory">Categoria</string>
+    <string name="movementInfoAction">Acción</string>
+    <string name="movementInfoProductId">Id del Producto</string>
+    <string name="addActionAdap">Agregado</string>
+    <string name="updateActionAdap">Actualizado</string>
+    <string name="deleteActionAdap">Eliminado</string>
+
 
     <!-- Main Menu -->
-    <!-- MenuItem -->
 
+    <!-- MenuItem -->
     <string name="preferences_item">Ir a las Preferencias</string>
     <string name="add_product_item">Añadir un Producto</string>
+    <string name="movement_info_item">Ir a los Registros de Movimiento</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
+    <!-- ProductItem -->
+    <string name="see_details_andor_change_amount_item">Ver Detalles y/o Cambiar Cantidad</string>
+    <string name="edit_item">Editar</string>
+    <string name="delete_item">Eliminar</string>
+
+    <!-- SeeProductDetails -->
+    <string name="save_string">Guardar</string>
+
+    <!-- Dialog -->
+    <string name="deleteDTitle">Eliminar Producto</string>
+    <string name="deleteDMessage">¿Desea eliminar este producto?</string>
+    <string name="yesDLabel">Sí</string>
+    <string name="noDLabel">No</string>
+
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="preferences_title">Preferencias</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    <!-- Preference Fields -->
+    <string name="order_by_text">Ordernar Productos Por</string>
+    <string name="order_by_add">Por Orden de Agregado</string>
+    <string name="order_by_name">Por Nombre</string>
+    <string name="order_by_price">Por Precio</string>
+    <string name="order_by_amount">Por Cantidad</string>
+    <string name="order_by_description">Por Descripción</string>
+    <string name="order_by_category">Por Categoría</string>
 
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>

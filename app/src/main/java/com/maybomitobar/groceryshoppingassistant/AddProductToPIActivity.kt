@@ -1,6 +1,5 @@
 package com.maybomitobar.groceryshoppingassistant
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,14 +8,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.room.Room
+import com.maybomitobar.groceryshoppingassistant.Classes.MovementInfo
 import com.maybomitobar.groceryshoppingassistant.Classes.Product
-import com.maybomitobar.groceryshoppingassistant.Classes.ProductAction
 import com.maybomitobar.groceryshoppingassistant.Databases.GSADatabase
 import com.maybomitobar.groceryshoppingassistant.Helper.HelperFunctions
 
 class AddProductToPIActivity : AppCompatActivity()
 {
     private lateinit var products : MutableList<Product>
+    private lateinit var movementsInfo : MutableList<MovementInfo>
     private lateinit var nameTE : EditText
     private lateinit var priceTE : EditText
     private lateinit var categoryTE : EditText
@@ -41,8 +41,17 @@ class AddProductToPIActivity : AppCompatActivity()
             GSADatabase::class.java, "gsa_database"
         ).allowMainThreadQueries().build()
 
-        val list = db.productDao().getAll()
-        products = list.toMutableList()
+        try
+        {
+            val listProducts = db.productDao().getAll()
+            products = listProducts.toMutableList()
+            val listMovementsInfo = db.movementInfoDao().getAll()
+            movementsInfo = listMovementsInfo.toMutableList()
+        }
+        catch (e: Exception)
+        {
+
+        }
 
         nameTE.addTextChangedListener(object : TextWatcher
         {
@@ -58,12 +67,15 @@ class AddProductToPIActivity : AppCompatActivity()
 
             override fun afterTextChanged(editable: Editable?)
             {
-                for(i in products?.indices!!)
+                if (::products.isInitialized)
                 {
-                    if(products[i].name.toString() == nameTE.editableText.toString())
+                    for(i in products?.indices!!)
                     {
-                        HelperFunctions.makeDialog(applicationContext, "Error", applicationContext.getString(R.string.productExists))
-                        break
+                        if(products[i].name.toString() == nameTE.editableText.toString())
+                        {
+                            HelperFunctions.makeDialog(this@AddProductToPIActivity, "Error", applicationContext.getString(R.string.productExists))
+                            break
+                        }
                     }
                 }
             }
@@ -110,14 +122,31 @@ class AddProductToPIActivity : AppCompatActivity()
             try
             {
                 val name = nameTE.text.toString()
-                val category = categoryTE.text.toString()
                 val amount = amountTE.text.toString()
+                val price = priceTE.text.toString()
                 val description = descriptionTE.text.toString()
+                val category = categoryTE.text.toString()
 
                 if(checkProductFields(name, category, amount, description))
                 {
-                    val product = Product(products.size + 1, name, 0, amount.toInt(), description, category)
+                    var product : Product
+
+                    if (::products.isInitialized)
+                        product = Product(products.size + 1, name, price.toInt(), amount.toInt(), description, category)
+
+                    else
+                        product = Product(1, name, price.toInt(), amount.toInt(), description, category)
+
+                    var movementInfo : MovementInfo
+
+                    if(::movementsInfo.isInitialized)
+                        movementInfo = MovementInfo(movementsInfo.size + 1, "Add", product.id)
+
+                    else
+                        movementInfo = MovementInfo(1, "Add", product.id)
+
                     db.productDao().insertAll(product)
+                    db.movementInfoDao().insertAll(movementInfo)
                     finish()
                 }
             }

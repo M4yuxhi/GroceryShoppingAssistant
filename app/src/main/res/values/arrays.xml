@@ -1,12 +1,12 @@
 <resources>
-    <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
-    </string-array>
+    <!-- PreferenceS -->
 
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
+    <string-array name="order_by">
+        <item>@string/order_by_add</item>
+        <item>@string/order_by_name</item>
+        <item>@string/order_by_price</item>
+        <item>@string/order_by_amount</item>
+        <item>@string/order_by_description</item>
+        <item>@string/order_by_category</item>
     </string-array>
 </resources>

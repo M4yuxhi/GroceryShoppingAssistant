@@ -4,8 +4,8 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-//import com.maybomitobar.groceryshoppingassistant.Classes.MovementInfo
-/*
+import com.maybomitobar.groceryshoppingassistant.Classes.MovementInfo
+
 @Dao
 interface MovementInfoDao {
     @Query("SELECT * FROM movementInfo")
@@ -22,4 +22,4 @@ interface MovementInfoDao {
 
     @Delete
     fun delete(movementInfo : MovementInfo)
-}*/
+}

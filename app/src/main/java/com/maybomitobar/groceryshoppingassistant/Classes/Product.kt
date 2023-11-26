@@ -10,8 +10,8 @@ import androidx.room.PrimaryKey
 data class Product(
     @PrimaryKey val id : Int,
     @ColumnInfo(name = "name") val name : String?,
-    @ColumnInfo(name = "price") val price : Int,
-    @ColumnInfo(name = "amount") val amount : Int,
+    @ColumnInfo(name = "price") var price : Int,
+    @ColumnInfo(name = "amount") var amount : Int,
     @ColumnInfo(name = "description") val description : String?,
     @ColumnInfo(name = "category") val category : String?
 ): Parcelable {
