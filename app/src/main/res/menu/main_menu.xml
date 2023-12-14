@@ -19,4 +19,7 @@
     <item
         android:id="@+id/movementInfoItem"
         android:title="@string/movement_info_item" />
+    <item
+        android:id="@+id/apiRequestItem"
+        android:title="@string/api_request_item" />
 </menu>

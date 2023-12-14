@@ -51,4 +51,8 @@
     <string name="order_by_description">Por Descripción</string>
     <string name="order_by_category">Por Categoría</string>
     <string name="searchWhenProductsAreEmpty">No hay productos.</string>
+    <string name="getButtonText">Obtain</string>
+    <string name="api_request_item">API Test</string>
+    <string name="apiError">Hay un error con el recurso de la api</string>
+    <string name="api_instruction">Presioan el botón para obtener información</string>
 </resources>

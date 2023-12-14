@@ -113,6 +113,12 @@ class PantryInventoryActivity : AppCompatActivity()
                 startActivity(intent)
                 return true
             }
+            R.id.apiRequestItem ->
+            {
+                val intent = Intent(this, ApiRestActivity::class.java)
+                startActivity(intent)
+                return true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
     }

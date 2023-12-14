@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Grocery Shopping Assistant</string>
 
+    <!--Api Rest Activity-->
+    <!--Button-->
+    <string name="getButtonText">Obtener</string>
+
+    <!--Code-->
+    <string name="apiError">Hay un error con el recurso de la api</string>
+    <string name="api_instruction">Presioan el botón para obtener información</string>
+
     <!--GroceryShoppingListActivity-->
     <!--Button-->
     <string name="addProductB">Añadir Producto</string>
@@ -52,6 +60,7 @@
     <string name="preferences_item">Ir a las Preferencias</string>
     <string name="add_product_item">Añadir un Producto</string>
     <string name="movement_info_item">Ir a los Registros de Movimiento</string>
+    <string name="api_request_item">Prueba de API</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="search_product_item">Buscar Producto</string>
 
